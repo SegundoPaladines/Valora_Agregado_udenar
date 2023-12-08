@@ -1,0 +1,36 @@
+<div class="accordion-item">
+  <h2 class="accordion-header" [id]="'heading'+id">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + id" aria-expanded="false" [attr.aria-controls]="'collapse' + id">
+     <div class="container">
+      <div class="row g-4">
+        <div class="col-sm-12 col-md-4">
+          <p>{{nombre}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4" *ngIf="carrera">
+          <p>{{carrera}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4" *ngIf="numEstudiantes">
+          <p>{{numEstudiantes}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4" *ngIf="intensidadHoraria">
+          <p>{{intensidadHoraria}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4" *ngIf="horario">
+          <p>{{horario}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4" *ngIf="aula">
+          <p>{{aula}}</p>
+        </div>
+        <div class="col-sm-12 col-md-4" *ngIf="tipo">
+          <p>{{tipo}}</p>
+        </div>
+      </div>
+     </div>
+    </button>
+  </h2>
+  <div [id]="'collapse' + id" class="accordion-collapse collapse collapse" [attr.aria-labelledby]="'heading'+id" data-bs-parent="#materias">
+    <div class="accordion-body">
+      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+    </div>
+  </div>
+</div>

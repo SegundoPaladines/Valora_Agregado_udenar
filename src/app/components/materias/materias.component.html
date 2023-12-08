@@ -1,0 +1,22 @@
+<section>
+  <div class="card">
+    <div class="card-body">
+      @if(materias.length > 0){
+        <div class="accordion" id="materias">
+          @for(materia of materias; track materia.id){
+            <app-materia
+              [id] = "materia.id"
+              [nombre] = "materia.nombre"
+              [carrera] = "materia.carrera"
+              [numEstudiantes]= "materia.num_est"
+              [intensidadHoraria]= "materia.int_horaria"
+              [horario]="materia.horario"
+              [aula]="materia.aula"
+              [tipo]= "materia.tipo"
+            />
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
