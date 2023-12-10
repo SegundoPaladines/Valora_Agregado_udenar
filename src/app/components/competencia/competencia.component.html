@@ -1,1 +1,21 @@
-<p>competencia works!</p>
+<div class="accordion-item">
+  <h2 class="accordion-header" [id]="'heading'+id">
+    <button class="accordion-button collapsed w-100" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + id" aria-expanded="false" [attr.aria-controls]="'collapse' + id">
+     <div class="container">
+      <div class="row g-4">
+        <div class="col-sm-12 col-md-12">
+          <p>{{nombre}}</p>
+        </div>
+      </div>
+     </div>
+    </button>
+  </h2>
+  <div [id]="'collapse' + id" class="accordion-collapse collapse collapse" [attr.aria-labelledby]="'heading'+id" data-bs-parent="#materias">
+    <div class="accordion-body">
+      <app-actividades
+        [id_materia]="materia"
+        [id_competencia]="id"
+      />
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-actividad',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './actividad.component.css'
 })
 export class ActividadComponent {
-
+  @Input() nombre:string;
+  @Input() tipo:string;
+  @Input() fecha_entrega:string;
 }

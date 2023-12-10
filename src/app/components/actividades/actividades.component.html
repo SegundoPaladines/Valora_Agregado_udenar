@@ -1,1 +1,53 @@
-<p>actividades works!</p>
+<section>
+  <div class="container">
+    <div class="cart">
+      <div class="row">
+        @if(actividades.length > 0){
+          <ul class="list-group">
+            @for(actividad of actividades; track actividad.id){
+              <li class="list-group-item">
+                <app-actividad
+                  [nombre]="actividad.nombre"
+                  [tipo]="actividad.tipo"
+                  [fecha_entrega]="actividad.fecha_entrega"
+                />
+              </li>
+              <br />
+            }
+          </ul>
+        }
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <input
+            type="text"
+            class="t_input w-100"
+            [(ngModel)]="nombre"
+          />
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <input
+            type="text"
+            class="t_input w-100"
+            [(ngModel)]="tipo"
+          />
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <input
+            type="text"
+            class="t_input w-100"
+            [(ngModel)]="fecha_entrega"
+          />
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <button
+            type="submit"
+            class="btn btn-outline-success w-100"
+            (click)="agregarItem()"
+          >+</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

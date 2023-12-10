@@ -1,1 +1,39 @@
-<p>competencias works!</p>
+<section>
+  <div class="card">
+    <div class="card-body">
+      @if(competencias.length > 0){
+        <div class="accordion" id="materias">
+          @for(competencia of competencias; track competencia.id){
+            <app-competencia
+            [id]="competencia.id"
+            [nombre]="competencia.nombre"
+            [materia] ="id_materia"
+          />
+          }
+        </div>
+      }
+    </div>
+    <div class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="contenedor">
+          <div class="row">
+            <div class="col-sm-12 col-md-8">
+              <input
+                type="text"
+                class="t_input w-100"
+                [(ngModel)]="nombre"
+              />
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <button
+                type="submit"
+                class="btn btn-outline-success w-100"
+                (click)="agregarItem()"
+              >+</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</section>
