@@ -39,10 +39,10 @@ export class ActividadesComponent implements OnInit{
   }
 
   agregarItem(){
-    const reg = /^[A-Za-z0-9\s\t]+$/
+    const reg = /^[A-Za-z0-9\s\t\-_]+$/;
     if(reg.test(this.nombre) && reg.test(this.tipo) && reg.test(this.fecha_entrega)){
       let id = 1;
-      if(this.actividades.length > 1){
+      if(this.actividades.length > 0){
         id = parseInt(this.actividades[this.actividades.length-1].id)+1;
       }
       this.materiaService.agregarActidad(this.id_materia, this.id_competencia, new Actividad(id.toString(), this.tipo ,this.nombre, this.fecha_entrega));

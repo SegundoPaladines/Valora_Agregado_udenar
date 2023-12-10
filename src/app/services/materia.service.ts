@@ -100,6 +100,8 @@ export class MateriaServiceProvider{
       const competencia = materia.competencias.find((comp) => comp.id === id_competencia);
       if (competencia) {
         competencia.actividades.push(actividad);
+        this.competenciaActualizada.emit(competencia);
+        return;
       }
     }
   }
@@ -109,8 +111,6 @@ export class MateriaServiceProvider{
     if (materia) {
       const competencia = materia.competencias.find((comp) => comp.id === id_competencia);
       if (competencia) {
-        this.competenciaActualizada.emit(competencia);
-        this.materiaActualizada.emit(materia);
         return competencia.actividades;
       }
     }

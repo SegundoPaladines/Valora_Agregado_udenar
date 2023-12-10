@@ -13,27 +13,33 @@
         </div>
       }
     </div>
-    <div class="list-group list-group-flush">
-      <li class="list-group-item">
-        <div class="contenedor">
-          <div class="row">
-            <div class="col-sm-12 col-md-8">
-              <input
-                type="text"
-                class="t_input w-100"
-                [(ngModel)]="nombre"
-              />
-            </div>
-            <div class="col-sm-12 col-md-4">
-              <button
-                type="submit"
-                class="btn btn-outline-success w-100"
-                (click)="agregarItem()"
-              >+</button>
+    <div class="container">
+      <div class="list-group list-group-flush">
+        <li class="list-group-item text-center">
+          <h6>Agregar Nueva Competencia</h6>
+        </li>
+        <li class="list-group-item">
+          <div class="contenedor">
+            <div class="row">
+              <div class="col-sm-12 col-md-8">
+                <input
+                  type="text"
+                  class="t_input w-100"
+                  [(ngModel)]="nombre"
+                  placeholder="Nombre Competencia"
+                />
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <button
+                  type="submit"
+                  class="btn btn-outline-success w-100"
+                  (click)="agregarItem()"
+                >+</button>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
+        </li>
+      </div>
     </div>
   </div>
 </section>

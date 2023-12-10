@@ -35,10 +35,10 @@ export class CompetenciasComponent implements OnInit{
   }
 
   agregarItem(){
-    const reg = /^[A-Za-z0-9\s\t]+$/
+    const reg = /^[A-Za-z0-9\s\t\-_]+$/;
     if(this.nombre != undefined && this.nombre != null && reg.test(this.nombre)){
       let id = 1;
-      if(this.competencias.length > 1){
+      if(this.competencias.length > 0){
         id = parseInt(this.competencias[this.competencias.length-1].id)+1;
         console.log(id);
       }

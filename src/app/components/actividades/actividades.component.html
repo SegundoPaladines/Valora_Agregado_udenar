@@ -2,6 +2,10 @@
   <div class="container">
     <div class="cart">
       <div class="row">
+        <h6 class="text-center">Lista Actividades</h6>
+      </div>
+      <br />
+      <div class="row">
         @if(actividades.length > 0){
           <ul class="list-group">
             @for(actividad of actividades; track actividad.id){
@@ -18,11 +22,16 @@
         }
       </div>
       <div class="row">
+        <h6 class="text-center">Agregar Nueva Actividad</h6>
+      </div>
+      <hr />
+      <div class="row">
         <div class="col-sm-12 col-md-4">
           <input
             type="text"
             class="t_input w-100"
             [(ngModel)]="nombre"
+            placeholder="Nombre Actividad"
           />
         </div>
         <div class="col-sm-12 col-md-4">
@@ -30,6 +39,7 @@
             type="text"
             class="t_input w-100"
             [(ngModel)]="tipo"
+            placeholder="Tipo de Actividad"
           />
         </div>
         <div class="col-sm-12 col-md-4">
@@ -37,12 +47,13 @@
             type="text"
             class="t_input w-100"
             [(ngModel)]="fecha_entrega"
+            placeholder="Fecha de Entrega"
           />
         </div>
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-12 w-100">
           <button
             type="submit"
-            class="btn btn-outline-success w-100"
+            class="btn btn-outline-success w-100 boton"
             (click)="agregarItem()"
           >+</button>
         </div>
